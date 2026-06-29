@@ -77,7 +77,8 @@ export default function DataExchange() {
   };
 
   const handleExportAll = () => {
-    window.open('/api/employees/export', '_blank');
+    const base = import.meta.env.VITE_API_BASE_URL || '/api';
+    window.open(`${base}/employees/export`, '_blank');
   };
 
   return (

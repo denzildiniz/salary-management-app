@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import {
   AlertTriangle,
-  ArrowRight,
   CheckCircle2,
   HelpCircle,
   Sparkles,
@@ -241,18 +240,12 @@ export default function BulkActions() {
 
                 <div className="bg-slate-950/60 border border-slate-800 p-4 rounded-xl flex flex-col justify-between">
                   <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                    Average Salary Shift
+                    Avg. Salary Increase
                   </span>
-                  <span className="text-2xl font-extrabold text-indigo-400 mt-3.5 flex items-center space-x-1.5">
-                    <span>
-                      ${Math.round(preview.originalTotalSpendUsd / preview.affectedCount).toLocaleString()}
-                    </span>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-500" />
-                    <span className="text-white">
-                      ${Math.round(preview.newTotalSpendUsd / preview.affectedCount).toLocaleString()}
-                    </span>
+                  <span className="text-2xl font-extrabold text-indigo-400 mt-3.5">
+                    +${Math.round((preview.newTotalSpendUsd - preview.originalTotalSpendUsd) / preview.affectedCount).toLocaleString()}
                   </span>
-                  <span className="text-[10px] text-slate-400 mt-1">USD base average increase</span>
+                  <span className="text-[10px] text-slate-400 mt-1">USD per employee</span>
                 </div>
               </div>
 
